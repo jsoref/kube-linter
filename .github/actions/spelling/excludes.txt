@@ -1,0 +1,14 @@
+# See https://github.com/check-spelling/check-spelling/wiki/Configuration-Examples:-excludes
+(?:^|/)(?i)COPYRIGHT
+(?:^|/)(?i)LICEN[CS]E
+(?:^|/)package(?:-lock)\.json$
+(?:^|/)vendor/
+ignore$
+\.lock$
+\.min\.
+\.mod$
+\.svg$
+^go\.sum$
+^pkg/templates/all/all\.go$
+^\.github/actions/spelling/
+^\.github/workflows/spelling\.yml
