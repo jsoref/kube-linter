@@ -36,7 +36,7 @@ func init() {
 				if !found {
 					return nil
 				}
-				sa := stringutils.OrDefault(podSpec.ServiceAccountName, podSpec.DeprecatedServiceAccount)
+				sa := stringutils.OrFallback(podSpec.ServiceAccountName, podSpec.DeprecatedServiceAccount)
 				// Default service account always exists.
 				if sa == "" || sa == "default" {
 					return nil
