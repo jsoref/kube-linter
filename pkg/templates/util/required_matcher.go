@@ -42,7 +42,7 @@ func ConstructRequiredMapMatcher(key, value, fieldType string) (check.Func, erro
 			}
 		}
 		return []diagnostic.Diagnostic{{
-			Message: fmt.Sprintf("no %s matching \"%s=%s\" found", fieldType, key, stringutils.OrDefault(value, "<any>")),
+			Message: fmt.Sprintf("no %s matching \"%s=%s\" found", fieldType, key, stringutils.OrFallback(value, "<any>")),
 		}}
 	}, nil
 }

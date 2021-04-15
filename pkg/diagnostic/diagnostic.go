@@ -33,7 +33,7 @@ var (
 )
 
 func formatObj(obj k8sutil.Object) string {
-	return fmt.Sprintf("%s/%s %s", stringutils.OrDefault(obj.GetNamespace(), "<no namespace>"), obj.GetName(), obj.GetObjectKind().GroupVersionKind())
+	return fmt.Sprintf("%s/%s %s", stringutils.OrFallback(obj.GetNamespace(), "<no namespace>"), obj.GetName(), obj.GetObjectKind().GroupVersionKind())
 }
 
 // FormatToTerminal writes the result to the given writer, which is expected to support

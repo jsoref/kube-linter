@@ -10,5 +10,5 @@ var (
 
 // Get returns the version.
 func Get() string {
-	return stringutils.OrDefault(version, "development")
+	return stringutils.OrFallback(version, "development")
 }
